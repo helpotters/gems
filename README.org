@@ -1,0 +1,14 @@
+#+TITLE: Readme
+This repository contains my solutions to the problems listed in [[https:projecteuler.net][Project Euler]]. It only uses Ruby for now.
+
+* Collatz Conjeture (Problem #14)
+The Collatz Conjecture consists of two basic operations that results in an interesting emergence property of self-containing multiple solutions and the fact that it currently does not have a proof.
+
+The rules are
+- $n \rightarrow n/2: \text{ N is Even}$
+- $n \rightarrow 3n + 1: \text{ N is Odd}$
+With these simple rules, the operations result in chains that can have unpredictable lengths, and even have terms that are larger than the original starting term.
+
+The requested submission for this project is to find the largest chain under a million.
+
+Given that I am using Ruby, I think the best solution is to solve it algorithmically and use the least amount of operations I can code (to run on a Chromebook).
