@@ -14,8 +14,4 @@ RSpec.describe Collatz do
       expect(collatz.start_num).to eq(13)
     end
   end
-
-  context "tree building" do
-
-  end
 end
