@@ -1,6 +1,7 @@
 # node_spec.rb
 # frozen_string_literal: true
 
+# TODO: Fix relative links; not best practice
 require_relative "./../lib/node"
 
 RSpec.describe NodeList do
