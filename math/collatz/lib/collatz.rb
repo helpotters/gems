@@ -26,8 +26,8 @@ module CollatzConjecture
 
     public
 
-    def create_node
-      NodeList::Node.new(@start_num)
+    def create_node(num = @start_num)
+      NodeList::Node.new(num)
     end
 
     def solve(num)
@@ -43,6 +43,11 @@ module CollatzConjecture
 
     def odd(num)
       (num * 3) + 1
+    end
+
+    def up_analyze(node = @node)
+      factors = parent_factors(node.data)
+      factors.each { |factor| node.parent.push(create_node(factor)) }
     end
 
     def parent_factors(value = @node.data)
