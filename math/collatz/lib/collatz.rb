@@ -11,7 +11,7 @@ module CollatzConjecture
 
     def initialize(num)
       @start_num = input(num)
-      @node = create_node
+      @node = create_node(@start_num)
       @result = solve(@node.data)
     end
 
@@ -25,8 +25,8 @@ module CollatzConjecture
 
     public
 
-    def create_node
-      NodeList::Node.new(@start_num)
+    def create_node(value)
+      NodeList::Node.new(value)
     end
 
     def solve(num)
