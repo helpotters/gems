@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
 
   spec.summary = "A practice project to learn rspec."
   spec.license = "MIT"
-  spec.required_ruby_version = ">= 3.0.2"
+  spec.required_ruby_version = ">= 3.0.0"
 
   spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
 
