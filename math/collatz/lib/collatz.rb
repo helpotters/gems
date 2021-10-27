@@ -31,6 +31,7 @@ module CollatzConjecture
 
     def solve(num)
       return 1 if num == 1
+
       result = num.even? ? even(num) : odd(num)
       solve(result)
     end

@@ -39,6 +39,15 @@ RSpec.describe CollatzConjecture do
       end
     end
   end
+  pending
   describe "Longest Chain" do
+    context "investigates its parents" do
+      # TODO: create nodes for the parents if applicable
+      # TODO: check if parents include the child number or if the child includes the parent
+    end
+    context "modify its tree" do
+      # TODO: restructures the "winner node" if the parent includes it
+      # TODO: moves on if the child includes the parent node
+    end
   end
 end
