@@ -22,10 +22,21 @@ RSpec.describe CollatzConjecture do
       end
     end
   end
-  describe "Node Operations" do
+  describe "Operations" do
     let(:start_node) { CollatzConjecture::Collatz.new(starting_num) }
     it "creates a new node with @start_num as data" do
       expect(start_node.node.instance_variable_get(:@data)).to eq(starting_num)
+    end
+    context "recursive #even and #odd" do
+      it "end at 1 when starting with even number" do
+        even_start = CollatzConjecture::Collatz.new(12)
+        # return 1, the last number in the sequence
+        expect(even_start.result).to eq(1)
+      end
+      it "end at 1 when starting with odd number" do
+        odd_start = CollatzConjecture::Collatz.new(13)
+        expect(odd_start.result).to eq(1)
+      end
     end
   end
 end
