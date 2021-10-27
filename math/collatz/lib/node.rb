@@ -5,12 +5,11 @@ module NodeList
   # Linked List with Info About Data, Parent, and Child
   class Node
     attr_reader :data
-    attr_writer :parent
-    attr_accessor :child
+    attr_accessor :child, :parent
 
     def initialize(data)
       @data = data
-      @parent = nil
+      @parent = []
       @child = nil
     end
   end
