@@ -28,6 +28,10 @@ RSpec.describe CollatzConjecture do
       expect(start_node.node.instance_variable_get(:@data)).to eq(starting_num)
     end
     context "recursive #even and #odd" do
+      it "should operate on node data" do
+        start = CollatzConjecture::Collatz.new(14)
+        expect(start.node.data).to eq(14)
+      end
       it "end at 1 when starting with even number" do
         even_start = CollatzConjecture::Collatz.new(12)
         # return 1, the last number in the sequence

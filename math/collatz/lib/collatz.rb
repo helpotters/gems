@@ -12,7 +12,7 @@ module CollatzConjecture
     def initialize(num)
       @start_num = input(num)
       @node = create_node
-      @result = solve(@start_num)
+      @result = solve(@node.data)
     end
 
     private
@@ -31,6 +31,7 @@ module CollatzConjecture
 
     def solve(num)
       return 1 if num == 1
+
       result = num.even? ? even(num) : odd(num)
       solve(result)
     end
