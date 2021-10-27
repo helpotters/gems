@@ -23,8 +23,6 @@ module CollatzConjecture
       @start_num = num
     end
 
-    public
-
     def create_node(value)
       NodeList::Node.new(value)
     end
