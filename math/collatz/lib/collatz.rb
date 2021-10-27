@@ -3,6 +3,7 @@
 require_relative "collatz/version"
 require_relative "./node"
 
+# A Collatz Tree Analyzer
 module CollatzConjecture
   include NodeList
   # Returns the correct pathway of values for a given number
