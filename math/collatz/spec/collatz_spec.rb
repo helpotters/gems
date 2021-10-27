@@ -35,11 +35,11 @@ RSpec.describe CollatzConjecture do
       it "end at 1 when starting with even number" do
         even_start = CollatzConjecture::Collatz.new(12)
         # return 1, the last number in the sequence
-        expect(even_start.result).to eq(1)
+        expect(even_start.solve).to eq(1)
       end
       it "end at 1 when starting with odd number" do
         odd_start = CollatzConjecture::Collatz.new(13)
-        expect(odd_start.result).to eq(1)
+        expect(odd_start.solve).to eq(1)
       end
     end
   end
