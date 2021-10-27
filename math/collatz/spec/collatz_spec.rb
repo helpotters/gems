@@ -40,12 +40,22 @@ RSpec.describe CollatzConjecture do
     end
   end
   pending
-  describe "Longest Chain" do
-    context "investigates its parents" do
-      # TODO: create nodes for the parents if applicable
+  describe "Chain Explorer" do
+    let(:one_factor) { CollatzConjecture::Collatz.new(1220) }
+    let(:multi_factor) { CollatzConjecture::Collatz.new(16) }
+    context "#up_analyze" do
+      context "#parent_factors" do
+        it "should return one factor" do
+          expect(one_factor.parent_factors).to match_array([2440])
+        end
+        it "should return two factors" do
+          expect(multi_factor.parent_factors).to match_array([32, 5])
+        end
+        # TODO: create nodes for the parents if applicable
+      end
       # TODO: check if parents include the child number or if the child includes the parent
     end
-    context "modify its tree" do
+    context "#set_new_root" do
       # TODO: restructures the "winner node" if the parent includes it
       # TODO: moves on if the child includes the parent node
     end

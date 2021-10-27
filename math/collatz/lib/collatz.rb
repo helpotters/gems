@@ -2,6 +2,7 @@
 
 require_relative "collatz/version"
 require_relative "./node"
+require "bigdecimal/util"
 
 module CollatzConjecture
   include NodeList
@@ -42,6 +43,14 @@ module CollatzConjecture
 
     def odd(num)
       (num * 3) + 1
+    end
+
+    def parent_factors(value = @node.data)
+      factors = []
+      even_factor = value * 2
+      odd_factor = (value - 1).to_d / 3.to_d # #to_d to avoid rounding errors
+      factors.push(odd_factor.to_i) if (odd_factor % 1).zero?
+      factors.push(even_factor) if (even_factor % 1).zero?
     end
   end
 end
