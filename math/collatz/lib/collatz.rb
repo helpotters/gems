@@ -16,11 +16,12 @@ module CollatzConjecture
       @node = create_node(@start_num)
     end
 
-    def solve(num = @node.data)
-      return 1 if num == 1
+    def solve(node = @node)
+      return 1 if node.data == 1
 
-      result = num.even? ? even(num) : odd(num)
-      solve(result)
+      up_analyze(node)
+      result = node.data.even? ? even(node.data) : odd(node.data)
+      solve(create_node(result))
     end
 
     private
@@ -39,15 +40,8 @@ module CollatzConjecture
       (num * 3) + 1
     end
 
-    public
-
     def create_node(num = @start_num)
       NodeList::Node.new(num)
-    end
-
-    def up_analyze(node = @node)
-      factors = parent_factors(node.data)
-      factors.each { |factor| node.parent.push(create_node(factor)) }
     end
 
     def parent_factors(value = @node.data)
@@ -56,6 +50,11 @@ module CollatzConjecture
       odd_factor = (value - 1).to_d / 3.to_d # #to_d to avoid rounding errors
       factors.push(odd_factor.to_i) if (odd_factor % 1).zero? # to_i to reverse to_d
       factors.push(even_factor) if (even_factor % 1).zero?
+    end
+
+    def up_analyze(node = @node)
+      factors = parent_factors(node.data)
+      factors.each { |factor| node.parent.push(create_node(factor)) }
     end
   end
 end
