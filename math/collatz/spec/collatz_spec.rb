@@ -4,7 +4,7 @@ RSpec.describe CollatzConjecture do
   starting_num = 1220 # Valid number for ease of testing
 
   # TODO: Refactor code to ban creation of collatz object w/out start num
-  describe "#initialization" do
+  context "#initialization" do
     context "invalid inputs" do
       it "is a string" do
         expect { CollatzConjecture::Collatz.new("asdf") }.to raise_error(ArgumentError)
@@ -61,11 +61,10 @@ RSpec.describe CollatzConjecture do
           expect(multi_factor.node.parent.length).to eq(2)
         end
       end
-      # TODO: check if parents include the child number or if the child includes the parent
     end
     xcontext "#set_new_root" do
-      # TODO: restructures the "winner node" if the parent includes it
-      # TODO: moves on if the child includes the parent node
+      # TODO: restructures the "winner node" if the parent includes it TODO:
+      # moves on if the child includes the parent node
     end
   end
 end

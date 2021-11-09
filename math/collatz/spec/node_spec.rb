@@ -2,7 +2,7 @@
 # frozen_string_literal: true
 
 # TODO: Fix relative links; not best practice
-require_relative "./../lib/node"
+require_relative "./../lib/node_modules"
 
 RSpec.describe NodeList do
   context "is a linked list that contains info about its parents and child" do
