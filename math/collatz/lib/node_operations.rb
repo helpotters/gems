@@ -35,7 +35,11 @@ module ChainExplorer
   end
 
   def analyze_branches(node = @node)
+    return if node.nil? || node.data.nil?
+
     factors = factors_of_parents(node.data)
+    return if factors.nil?
+
     factors.each { |factor| node.parent.push(create_node(factor)) }
   end
 
@@ -43,7 +47,7 @@ module ChainExplorer
     factors = []
     even_factor = value * 2
     odd_factor = (value - 1).to_d / 3.to_d # #to_d to avoid rounding errors
-    factors.push(odd_factor.to_i) if (odd_factor % 1).zero? # to_i to reverse to_d
-    factors.push(even_factor) if (even_factor % 1).zero?
+    factors.push(even_factor.to_i) if even_factor.round == even_factor
+    factors.push(odd_factor.to_i) if odd_factor.round.to_i == odd_factor.to_i # to_i to reverse to_d
   end
 end
