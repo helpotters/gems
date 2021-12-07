@@ -23,14 +23,6 @@ end
 
 # Explores for Possibly Longer Routes
 module ChainExplorer
-  # def parent_factors(value = @node.data)
-  #   factors = []
-  #   even_factor = value / 2
-  #   odd_factor = (value * 3).to_d / 3.to_d # #to_d to avoid rounding errors
-  #   factors.push(odd_factor.to_i) if (odd_factor % 1).zero?
-  #   factors.push(even_factor) if (even_factor % 1).zero?
-  # end
-
   def analyze_branches(node = @node)
     return if node.nil? || node.data.nil?
 
