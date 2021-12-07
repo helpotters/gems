@@ -3,6 +3,7 @@
 RSpec.describe Operations do
   starting_num = 1220 # Valid number for ease of testing
   let(:start_node) { CollatzConjecture::Collatz.new(starting_num) }
+
   it "creates a new node with @start_num as data" do
     expect(start_node.node.instance_variable_get(:@data)).to eq(starting_num)
   end
@@ -37,11 +38,11 @@ RSpec.describe ChainExplorer do
     end
     context "create and analyze parent nodes" do
       it "should create one parent node" do
-        one_factor.up_analyze
+        one_factor.analyze_branches
         expect(one_factor.node.parent.length).to eq(1)
       end
       it "should create two parent nodes" do
-        multi_factor.up_analyze
+        multi_factor.analyze_branches
         expect(multi_factor.node.parent.length).to eq(2)
       end
     end
