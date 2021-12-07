@@ -22,7 +22,7 @@ module CollatzConjecture
     def solve(node = @node)
       return 1 if node.data == 1
 
-      analyze_branches(node)
+      # analyze_branches(node)
       result = node.data.even? ? even(node.data) : odd(node.data)
       solve(create_node(result))
     end

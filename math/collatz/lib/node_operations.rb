@@ -32,6 +32,7 @@ module ChainExplorer
     factors.each do |factor|
       node.parent.push(create_node(factor))
     end
+    node
   end
 
   def parent_factors(value = @node.data)
